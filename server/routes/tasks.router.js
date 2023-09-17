@@ -29,6 +29,32 @@ router.post("/", (req, res) => {
         res.sendStatus(500);
     })
 });
+// PUT
+router.put("/:id", (req, res) => {
+    const id = req.params.id;
+    const isComplete = req.body.is_complete;
+    const queryText = `UPDATE "Tasks" SET "is_complete" = $1 WHERE "id" = $2;`;
+    pool
+    .query(queryText, [isComplete, id])
+    .then(() => res.sendStatus(204))
+    .catch((err) => {
+      console.log("Error in UPDATING Tasks table", err);
+      res.sendStatus(500);
+    });
+  });
+  
+  // DELETE
+  router.delete("/:id", (req, res) => {
+    const id = req.params.id;
+    const queryText = `DELETE FROM "Tasks" WHERE "id" = $1;`;
+    pool
+    .query(queryText, [id])
+    .then(() => res.sendStatus(204))
+    .catch((err) => {
+      console.log("Error in DELETING from Tasks table", err);
+      res.sendStatus(500);
+    });
+  });
 
 
 
