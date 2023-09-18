@@ -1,1 +1,106 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Task Styles */
+  .task {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
 
+  /* Form Styles */
+  #task-form {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  #task-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  #task-form input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #4CAF50; /* Green */
+  }
+  
+  #task-form input[type="text"]:focus {
+    border-color: #45a049;
+    outline: none;
+  }
+  
+  #task-form button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-size: 16px;
+  }
+  
+  #task-form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Button Styles */
+  button {
+    padding: 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+  }
+  
+  #addButton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  #addButton:hover {
+    background-color: #45a049;
+  }
+  
+  .completeBtn {
+    background-color: #5cb85c;
+  }
+  
+  .deleteBtn {
+    background-color: #d9534f;
+  }
+  
