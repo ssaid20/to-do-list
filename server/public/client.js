@@ -7,10 +7,12 @@ $(document).ready(function () {
   // load existing tasks on page load
   getTasks();
 
+  // Listeners for complete and delete buttons
   $("#tasks tbody").on("click", ".completeBtn", changeCompletionStatus);
   $("#tasks tbody").on("click", ".deleteBtn", deleteTask);
-}); 
+});
 
+// Function to set up click listeners
 function setupClickListeners() {
   $('#new-task-form').on('submit', function(event) {
     event.preventDefault();
@@ -23,6 +25,7 @@ function setupClickListeners() {
   });
 }
 
+// Function to append tasks to the DOM
 function appendTasksToDOM(tasks) {
   $("#tasks tbody").empty();
 
@@ -43,6 +46,7 @@ function appendTasksToDOM(tasks) {
   }
 }
 
+// Function to change the completion status of a task
 function changeCompletionStatus(event) {
   const taskId = $(event.target).data("id");
   console.log("Change completion status for task id:", taskId);
@@ -59,6 +63,7 @@ function changeCompletionStatus(event) {
     .catch((err) => console.log("Error in PUT", err));
 }
 
+// Function to get all tasks
 function getTasks() {
   console.log("in getTasks");
   $.ajax({
@@ -72,6 +77,7 @@ function getTasks() {
     .catch((err) => console.log("Error in GET", err));
 }
 
+// Function to save a new task
 function saveTask(newTask) {
   console.log("in saveTask", newTask);
   $.ajax({
@@ -86,6 +92,7 @@ function saveTask(newTask) {
     .catch((err) => console.log("Error in POST", err));
 }
 
+// Function to delete a task
 const deleteTask = (event) => {
   const id = $(event.target).data("id");
 
@@ -98,4 +105,5 @@ const deleteTask = (event) => {
     })
     .catch((err) => console.log(err));
 };
+
 
